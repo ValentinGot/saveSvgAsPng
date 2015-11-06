@@ -1,15 +1,20 @@
-saveSvgAsPng
-============
+# Save SVG as PNG
 
-Installation
-------------
+## Installation
+
+### Bower
 
 ```
-npm install save-svg-as-png
+bower install https://github.com/ValentinGot/saveSvgAsPng
 ```
 
-Usage
------
+### NPM
+
+```
+npm install https://github.com/ValentinGot/saveSvgAsPng
+```
+
+## Usage
 
 To save a PNG, include the script `saveSvgAsPng.js` in your page, then call the `saveSvgAsPng` function with an SVG node and a filename:
 
@@ -33,9 +38,16 @@ svgAsDataUri(document.getElementById("diagram"), {}, function(uri) {
 });
 ```
 
+If you want a dataURI for a PNG, you can call `saveSvgAsBase64` with an SVG node, options and a callback:
+
+```javascript
+saveSvgAsBase64(document.getElementById("diagram"), {}, function(base64) {
+  ...
+});
+```
+
 Compatible with browserify.
 
-Browser Support
----------------
+## Browser Support
 
 saveSvgAsPng relies on the canvas element's `toDataURL`, which throws a SecurityError in IE.
